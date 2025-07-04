@@ -1,0 +1,407 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Restro POS - Customers
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+ </head>
+ <body class="bg-white text-gray-900">
+  <div class="max-w-[1200px] mx-auto p-4">
+   <div class="flex flex-col md:flex-row md:space-x-6 border border-gray-300 rounded-lg overflow-hidden" style="height: 700px;">
+    <!-- Left Sidebar -->
+    <aside class="flex flex-col w-full md:w-20 bg-white border-r border-gray-300 p-2 space-y-6">
+     <button onclick="window.location.href='index.html'"
+        class="flex flex-col items-center justify-center space-y-1 text-gray-400 py-3 px-2 w-full hover:text-orange-500 hover:border-orange-400 hover:border rounded-lg">      <i class="fas fa-home text-xl">
+      </i>
+      <span class="text-xs font-semibold">
+       Home
+      </span>
+     </button>
+
+     <button onclick="window.location.href='Customers.html'"
+        class="flex flex-col items-center justify-center space-y-1 text-gray-400 py-3 px-2 w-full hover:text-orange-500 hover:border-orange-400 hover:border rounded-lg">
+        <i class="fas fa-user-friends text-xl"></i>
+        <span class="text-xs font-semibold">
+            Customers
+        </span>
+    </button>
+
+     <button onclick="window.location.href='Tabless.html'"
+        class="flex flex-col items-center justify-center space-y-1 text-gray-400 py-3 px-2 w-full hover:text-orange-500 hover:border-orange-400 hover:border rounded-lg">      <i class="fas fa-table text-xl">
+      </i>
+      <span class="text-xs font-semibold">
+       Tables
+      </span>
+     </button>
+     <button class="flex flex-col items-center justify-center space-y-1 text-gray-400 py-3 px-2 w-full hover:text-orange-500 hover:border-orange-400 hover:border rounded-lg">
+      <i class="fas fa-briefcase text-xl">
+      </i>
+      <span class="text-xs font-semibold">
+       Carrier
+      </span>
+     </button>
+     <button class="flex flex-col items-center justify-center space-y-1 text-gray-400 py-3 px-2 w-full hover:text-orange-500 hover:border-orange-400 hover:border rounded-lg">
+      <i class="fas fa-chart-bar text-xl">
+      </i>
+      <span class="text-xs font-semibold">
+       Reports
+      </span>
+     </button>
+     <button class="flex flex-col items-center justify-center space-y-1 text-gray-400 py-3 px-2 w-full hover:text-orange-500 hover:border-orange-400 hover:border rounded-lg">
+      <i class="fas fa-cog text-xl">
+      </i>
+      <span class="text-xs font-semibold">
+       Settings
+      </span>
+     </button>
+     <button class="flex flex-col items-center justify-center space-y-1 text-gray-400 py-3 px-2 w-full mt-auto hover:text-orange-500 hover:border-orange-400 hover:border rounded-lg">
+      <i class="fas fa-sign-out-alt text-xl">
+      </i>
+      <span class="text-xs font-semibold">
+       Logout
+      </span>
+     </button>
+    </aside>
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col p-4 space-y-4 bg-white">
+     <!-- Header -->
+     <header class="flex flex-col md:flex-row md:items-center md:justify-between space-y-3 md:space-y-0">
+      <h1 class="text-xl font-semibold">
+       Customers
+      </h1>
+      <div class="flex items-center space-x-3 w-full md:w-auto">
+       <div class="relative flex-1">
+        <input class="w-full border border-gray-300 rounded-md py-2 pl-4 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400" placeholder="Search customers...." type="text"/>
+        <i class="fas fa-search absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">
+        </i>
+       </div>
+       <button class="border border-gray-300 rounded-md p-2 text-gray-600 hover:text-gray-900 hover:border-gray-900" title="Refresh">
+        <i class="fas fa-sync-alt">
+        </i>
+       </button>
+       <button class="flex items-center space-x-1 bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold rounded-md py-2 px-4">
+        <i class="fas fa-user-plus">
+        </i>
+        <span>
+         Add Customer
+        </span>
+       </button>
+      </div>
+     </header>
+     <!-- Customers Table -->
+     <section class="overflow-auto border border-gray-300 rounded-md">
+      <table class="min-w-full divide-y divide-gray-200 text-sm">
+       <thead class="bg-gray-50">
+        <tr>
+         <th class="px-4 py-3 text-left font-semibold text-gray-700">
+          #
+         </th>
+         <th class="px-4 py-3 text-left font-semibold text-gray-700">
+          Name
+         </th>
+         <th class="px-4 py-3 text-left font-semibold text-gray-700">
+          Email
+         </th>
+         <th class="px-4 py-3 text-left font-semibold text-gray-700">
+          Phone
+         </th>
+         <th class="px-4 py-3 text-left font-semibold text-gray-700">
+          Address
+         </th>
+         <th class="px-4 py-3 text-left font-semibold text-gray-700">
+          Actions
+         </th>
+        </tr>
+       </thead>
+       <tbody class="divide-y divide-gray-200">
+        <tr>
+         <td class="px-4 py-3 whitespace-nowrap font-semibold text-gray-700">
+          1
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap">
+          John Doe
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap">
+          john.doe@example.com
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap">
+          (123) 456-7890
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap max-w-xs truncate" title="123 Main St, Springfield, IL 62704">
+          123 Main St, Springfield, IL 62704
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap space-x-2">
+          <button class="text-blue-600 hover:text-blue-800" title="Edit">
+           <i class="fas fa-edit">
+           </i>
+          </button>
+          <button class="text-red-600 hover:text-red-800" title="Delete">
+           <i class="fas fa-trash-alt">
+           </i>
+          </button>
+         </td>
+        </tr>
+        <tr>
+         <td class="px-4 py-3 whitespace-nowrap font-semibold text-gray-700">
+          2
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap">
+          Jane Smith
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap">
+          jane.smith@example.com
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap">
+          (987) 654-3210
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap max-w-xs truncate" title="456 Elm St, Metropolis, NY 10001">
+          456 Elm St, Metropolis, NY 10001
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap space-x-2">
+          <button class="text-blue-600 hover:text-blue-800" title="Edit">
+           <i class="fas fa-edit">
+           </i>
+          </button>
+          <button class="text-red-600 hover:text-red-800" title="Delete">
+           <i class="fas fa-trash-alt">
+           </i>
+          </button>
+         </td>
+        </tr>
+        <tr>
+         <td class="px-4 py-3 whitespace-nowrap font-semibold text-gray-700">
+          3
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap">
+          Michael Johnson
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap">
+          michael.johnson@example.com
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap">
+          (555) 123-4567
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap max-w-xs truncate" title="789 Oak St, Gotham, NJ 07001">
+          789 Oak St, Gotham, NJ 07001
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap space-x-2">
+          <button class="text-blue-600 hover:text-blue-800" title="Edit">
+           <i class="fas fa-edit">
+           </i>
+          </button>
+          <button class="text-red-600 hover:text-red-800" title="Delete">
+           <i class="fas fa-trash-alt">
+           </i>
+          </button>
+         </td>
+        </tr>
+        <tr>
+         <td class="px-4 py-3 whitespace-nowrap font-semibold text-gray-700">
+          4
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap">
+          Emily Davis
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap">
+          emily.davis@example.com
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap">
+          (444) 987-6543
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap max-w-xs truncate" title="321 Pine St, Star City, CA 90001">
+          321 Pine St, Star City, CA 90001
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap space-x-2">
+          <button class="text-blue-600 hover:text-blue-800" title="Edit">
+           <i class="fas fa-edit">
+           </i>
+          </button>
+          <button class="text-red-600 hover:text-red-800" title="Delete">
+           <i class="fas fa-trash-alt">
+           </i>
+          </button>
+         </td>
+        </tr>
+        <tr>
+         <td class="px-4 py-3 whitespace-nowrap font-semibold text-gray-700">
+          5
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap">
+          William Brown
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap">
+          william.brown@example.com
+    
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap">
+          (333) 555-1212
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap max-w-xs truncate" title="654 Cedar St, Central City, TX 75001">
+          654 Cedar St, Central City, TX 75001
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap space-x-2">
+          <button class="text-blue-600 hover:text-blue-800" title="Edit">
+           <i class="fas fa-edit">
+           </i>
+          </button>
+          <button class="text-red-600 hover:text-red-800" title="Delete">
+           <i class="fas fa-trash-alt">
+           </i>
+          </button>
+         </td>
+        </tr>
+        <tr>
+         <td class="px-4 py-3 whitespace-nowrap font-semibold text-gray-700">
+          6
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap">
+          Olivia Wilson
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap">
+          olivia.wilson@example.com
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap">
+          (222) 444-3333
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap max-w-xs truncate" title="987 Birch St, Coast City, FL 33001">
+          987 Birch St, Coast City, FL 33001
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap space-x-2">
+          <button class="text-blue-600 hover:text-blue-800" title="Edit">
+           <i class="fas fa-edit">
+           </i>
+          </button>
+          <button class="text-red-600 hover:text-red-800" title="Delete">
+           <i class="fas fa-trash-alt">
+           </i>
+          </button>
+         </td>
+        </tr>
+        <tr>
+         <td class="px-4 py-3 whitespace-nowrap font-semibold text-gray-700">
+          7
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap">
+          James Martinez
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap">
+          james.martinez@example.com
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap">
+          (111) 222-3333
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap max-w-xs truncate" title="159 Maple St, Keystone City, OH 43001">
+          159 Maple St, Keystone City, OH 43001
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap space-x-2">
+          <button class="text-blue-600 hover:text-blue-800" title="Edit">
+           <i class="fas fa-edit">
+           </i>
+          </button>
+          <button class="text-red-600 hover:text-red-800" title="Delete">
+           <i class="fas fa-trash-alt">
+           </i>
+          </button>
+         </td>
+        </tr>
+        <tr>
+         <td class="px-4 py-3 whitespace-nowrap font-semibold text-gray-700">
+          8
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap">
+          Sophia Garcia
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap">
+          sophia.garcia@example.com
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap">
+          (777) 888-9999
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap max-w-xs truncate" title="753 Walnut St, Blüdhaven, WA 98001">
+          753 Walnut St, Blüdhaven, WA 98001
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap space-x-2">
+          <button class="text-blue-600 hover:text-blue-800" title="Edit">
+           <i class="fas fa-edit">
+           </i>
+          </button>
+          <button class="text-red-600 hover:text-red-800" title="Delete">
+           <i class="fas fa-trash-alt">
+           </i>
+          </button>
+         </td>
+        </tr>
+        <tr>
+         <td class="px-4 py-3 whitespace-nowrap font-semibold text-gray-700">
+          9
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap">
+          Daniel Lee
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap">
+          daniel.lee@example.com
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap">
+          (666) 777-8888
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap max-w-xs truncate" title="852 Spruce St, National City, OR 97035">
+          852 Spruce St, National City, OR 97035
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap space-x-2">
+          <button class="text-blue-600 hover:text-blue-800" title="Edit">
+           <i class="fas fa-edit">
+           </i>
+          </button>
+          <button class="text-red-600 hover:text-red-800" title="Delete">
+           <i class="fas fa-trash-alt">
+           </i>
+          </button>
+         </td>
+        </tr>
+        <tr>
+         <td class="px-4 py-3 whitespace-nowrap font-semibold text-gray-700">
+          10
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap">
+          Ava Hernandez
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap">
+          ava.hernandez@example.com
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap">
+          (555) 666-7777
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap max-w-xs truncate" title="951 Chestnut St, Emerald City, MI 48201">
+          951 Chestnut St, Emerald City, MI 48201
+         </td>
+         <td class="px-4 py-3 whitespace-nowrap space-x-2">
+          <button class="text-blue-600 hover:text-blue-800" title="Edit">
+           <i class="fas fa-edit">
+           </i>
+          </button>
+          <button class="text-red-600 hover:text-red-800" title="Delete">
+           <i class="fas fa-trash-alt">
+           </i>
+          </button>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </section>
+    </main>
+    <!-- Right Sidebar -->
+   
+   </div>
+  </div>
+ </body>
+</html>
